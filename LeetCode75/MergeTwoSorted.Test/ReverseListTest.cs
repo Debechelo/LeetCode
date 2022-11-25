@@ -1,7 +1,4 @@
-﻿using LeetCode75;
-using System.Security.Principal;
-
-namespace LeetCode75.Test
+﻿namespace LeetCode75.Test
 {
     [TestClass]
     public class ReverseListTest
@@ -10,8 +7,8 @@ namespace LeetCode75.Test
         public void ReverseListNull()
         {
             ListNode head = null;
-            MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
-            ListNode reverseHead = mtsl.ReverseList(head);
+            List list = new List();
+            ListNode reverseHead = list.ReverseList(head);
             Assert.IsNull(reverseHead);
         }
 
@@ -19,8 +16,8 @@ namespace LeetCode75.Test
         public void ReverseList0()
         {
             ListNode head = new ListNode();
-            MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
-            ListNode reverseHead = mtsl.ReverseList(head);
+            List list = new List();
+            ListNode reverseHead = list.ReverseList(head);
             Assert.AreEqual(0, reverseHead.val);
         }
 
@@ -28,8 +25,8 @@ namespace LeetCode75.Test
         public void ReverseListOneLength()
         {
             ListNode head = new ListNode(1);
-            MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
-            ListNode reverseHead = mtsl.ReverseList(head);
+            List list = new List();
+            ListNode reverseHead = list.ReverseList(head);
             Assert.AreEqual(1, reverseHead.val);
         }
 
@@ -37,8 +34,8 @@ namespace LeetCode75.Test
         public void ReverseListNormalTest()
         {
             ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-            MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
-            ListNode reverseHead = mtsl.ReverseList(head);
+            List list = new List();
+            ListNode reverseHead = list.ReverseList(head);
             int[] listArray = { reverseHead.val, reverseHead.next.val, reverseHead.next.next.val , reverseHead.next.next.next.val
                     , reverseHead.next.next.next.next.val };
             int[] listArrayExpected = { 5, 4, 3, 2, 1 };
@@ -53,10 +50,10 @@ namespace LeetCode75.Test
         public void ReverseListNormalTest2()
         {
             ListNode head = new ListNode(5, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1)))));
-            MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
-            ListNode reverseHead = mtsl.ReverseList(head);
+            List list = new List();
+            ListNode reverseHead = list.ReverseList(head);
 
-            int[] listArray = { reverseHead.val, reverseHead.next.val, reverseHead.next.next.val , reverseHead.next.next.next.val 
+            int[] listArray = { reverseHead.val, reverseHead.next.val, reverseHead.next.next.val , reverseHead.next.next.next.val
                     , reverseHead.next.next.next.next.val };
             int[] listArrayExpected = { 1, 2, 3, 4, 5 };
 

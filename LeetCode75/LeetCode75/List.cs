@@ -1,6 +1,6 @@
 ﻿namespace LeetCode75
 {
-    public class MergeTwoSortedLists
+    public class List
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
@@ -46,18 +46,51 @@
 
         public ListNode ReverseList(ListNode head)
         {
-            if(head == null || head.next == null)
+            if (head == null || head.next == null)
                 return head;
             ListNode node = head.next;
             ListNode nextNode = node.next;
             head.next = null;
-            while (node != null) { 
+            while (node != null)
+            {
                 nextNode = node.next;
                 node.next = head;
                 head = node;
                 node = nextNode;
             }
             return head;
+        }
+
+        public ListNode MiddleNode(ListNode head)
+        {
+            ListNode middleNode = head;
+            while (head != null && head.next != null)
+            {
+                middleNode = middleNode.next;
+                head = head.next.next;
+            }
+            return middleNode;
+        }
+
+        public ListNode DetectCycle(ListNode head)
+        {
+            ListNode listNode = head;
+            int imax = 1;
+            while (head != null && head.next != null)
+            {
+                ListNode node = listNode;
+                for (int i = 0; i < imax; i++)
+                {
+                    if (node == head.next)
+                    {
+                        return node;
+                    }
+                    node = node.next;
+                }
+                head = head.next;
+                imax++;
+            }
+            return null;
         }
     }
 }
