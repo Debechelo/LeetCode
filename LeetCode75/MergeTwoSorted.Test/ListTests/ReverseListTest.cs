@@ -1,4 +1,4 @@
-﻿namespace LeetCode75.Test.ListTests
+﻿namespace DataStructure.Test.ListTests
 {
     [TestClass]
     public class ReverseListTest

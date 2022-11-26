@@ -1,4 +1,4 @@
-﻿using LeetCode75;
+﻿using DataStructure;
 
 public class Program
 {

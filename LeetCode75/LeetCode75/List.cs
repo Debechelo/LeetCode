@@ -1,4 +1,4 @@
-﻿namespace LeetCode75
+﻿namespace DataStructure
 {
     public class ListNode
     {
