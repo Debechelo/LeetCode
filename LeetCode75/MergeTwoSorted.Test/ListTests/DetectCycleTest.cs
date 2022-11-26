@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode75.Test
+namespace LeetCode75.Test.ListTests
 {
     [TestClass]
     public class DetectCycleTest
     {
         [TestMethod]
-        public void DetectCycleNull() {
+        public void DetectCycleNull()
+        {
             ListNode listNode = null;
             List list = new List();
             ListNode beginNode = list.DetectCycle(listNode);
@@ -54,7 +55,7 @@ namespace LeetCode75.Test
         public void DetectCycleNlengthWithCycleToBegin()
         {
             ListNode listNode = new ListNode(3, new ListNode(4, new ListNode(5)));
-            listNode.next.next.next = listNode; 
+            listNode.next.next.next = listNode;
             List list = new List();
             ListNode beginNode = list.DetectCycle(listNode);
 

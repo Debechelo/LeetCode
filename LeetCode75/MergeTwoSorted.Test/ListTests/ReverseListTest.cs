@@ -1,4 +1,4 @@
-﻿namespace LeetCode75.Test
+﻿namespace LeetCode75.Test.ListTests
 {
     [TestClass]
     public class ReverseListTest

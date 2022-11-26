@@ -19,4 +19,8 @@
     <ProjectReference Include="..\LeetCode75\LeetCode75.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TreeTests\" />
+  </ItemGroup>
+
 </Project>
