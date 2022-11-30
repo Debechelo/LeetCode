@@ -103,5 +103,23 @@
             }
             return null;
         }
+
+        //удаляет n-й узел из конца списка
+        public ListNode RemoveNthFromEnd(ListNode head, int n) {
+            if(head == null || head.next == null)
+                return null;
+            ListNode back = head;
+            ListNode front= head;
+            for(int i = 0; i < n; i++)
+                front = front.next;
+            if(front == null)
+                return head.next;
+            while(front.next != null) {
+                front = front.next;
+                back = back.next;
+            }
+            back.next = back.next.next;
+            return head;
+        }
     }
 }
