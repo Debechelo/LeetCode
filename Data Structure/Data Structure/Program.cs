@@ -2,12 +2,11 @@
 
 public class Program
 {
-    public static void Main(string[] args)
-    {
-        ListNode listNode = new ListNode(3, new ListNode(4));
-        int n = 2;
+    public static void Main(string[] args) {
+        ListNode listNode1 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, new ListNode(5)))))));
         List list = new List();
-        ListNode head = list.RemoveNthFromEnd(listNode, n);
+        ListNode[] listNodes = { listNode1};
+        ListNode head = list.DeleteDuplicatesALL(listNode1);
         Console.WriteLine(1);
     }
 
