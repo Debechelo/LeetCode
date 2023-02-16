@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System;
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace DataStructure {
@@ -205,39 +207,44 @@ namespace DataStructure {
             while(node.next != null) {
                 if(node.val == node.next.val) {
                     node.next = node.next.next;
-                } else node = node.next;
+                } else
+                    node = node.next;
             }
             return head;
         }
 
         public ListNode DeleteDuplicatesALL(ListNode head) {
-            if(head == null || head.next == null)
-                return head;
-            bool flag = false;
-            while(head.next != null && head.val == head.next.val ) {
+            ListNode sentinel = new ListNode(0, head);
+            ListNode pred = sentinel;
+
+            while(head != null) {
+                if(head.next != null && head.val == head.next.val) {
+                    while(head.next != null && head.val == head.next.val) {
+                        head = head.next;
+                    }
+                    pred.next = head.next;
+                } else {
+                    pred = pred.next;
+                }
+
+                // move forward
                 head = head.next;
-                flag = true;
             }
-            if(flag) head = head.next;
-            flag = false;
+            return sentinel.next;
+        }
+
+        public ListNode SortList(ListNode head) {
             ListNode node = head;
-            while(node.next != null) {
-                if(node.val != node.next.val) {
-                    if(node.next.next != null && node.next.val == node.next.next.val) {
-                        node.next.next = node.next.next.next;
-                        flag = true;
-
-                    } else if(flag) {
-                        flag = false;
-                        node.next = node.next.next;
-                    } else
-                        node = node.next;
-
-                } else 
-                    node = node.next;                              
+            while(node != null) {
+                ListNode nodeSort = node.next;
+                while(nodeSort != null) {
+                    if(node.val > nodeSort.val)
+                        (node.val, nodeSort.val) = (nodeSort.val, node.val);
+                    nodeSort = nodeSort.next;
+                }
+                node = node.next;
             }
             return head;
         }
-
     }
 }
